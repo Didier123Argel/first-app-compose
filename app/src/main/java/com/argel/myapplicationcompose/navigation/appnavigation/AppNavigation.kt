@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.argel.myapplicationcompose.navigation.args.addArg
 import com.argel.myapplicationcompose.screensui.messagedetail.MessageDetailScreen
 import com.argel.myapplicationcompose.screensui.messageslist.MessageListScreen
+import com.argel.myapplicationcompose.screensui.signin.SigInScreen
 
 /**
  * Created by Argel Chan on 11/02/2023.
@@ -19,7 +20,7 @@ import com.argel.myapplicationcompose.screensui.messageslist.MessageListScreen
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = AppRoutes.RouteNavigationMessageListScreen.route) {
+    NavHost(navController = navController, startDestination = AppRoutes.RouteNavigationSignInScreen.route) {
         composable(route = AppRoutes.RouteNavigationMessageListScreen.route) {
             MessageListScreen(navController) // MESSAGE LIST SCREEN
         }
@@ -33,6 +34,10 @@ fun AppNavigation() {
                 it.arguments?.getString("title"),
                 it.arguments?.getString("body")
             ) // MESSAGE DETAIL SCREEN
+        }
+
+        composable(route = AppRoutes.RouteNavigationSignInScreen.route){
+            SigInScreen(navController = navController)
         }
     }
 }

@@ -8,4 +8,5 @@ package com.argel.myapplicationcompose.navigation.appnavigation
 sealed class AppRoutes(val route: String) {
     object RouteNavigationMessageListScreen: AppRoutes("message_detail_screen")
     object RouteNavigationMessageDetailScreen: AppRoutes("message_list_screen")
+    object RouteNavigationSignInScreen: AppRoutes("sign_in_screen")
 }
